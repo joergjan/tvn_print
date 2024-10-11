@@ -1,0 +1,9 @@
+generator client {
+    provider             = "prisma-client-py"
+    recursive_type_depth = 5
+}
+
+datasource db {
+    provider = "sqlite"
+    url      = "file:/Users/janjorg/Documents/tvn/tvn_order/prisma/dev.db" //  env("DATABASE_URL") // 
+}

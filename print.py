@@ -1,8 +1,6 @@
-from escpos.printer import Usb
+from escpos.printer import Network
 
-""" Seiko Epson Corp. Receipt Printer (EPSON TM-T88III) """
-p = Usb(0x04b8, 0x0202, 0, profile="TM-T20III")
-p.text("Hello World\n")
-p.image("logo.gif")
-p.barcode('4006381333931', 'EAN13', 64, 2, '', '')
-p.cut()
+kitchen = Network("192.168.1.148")  # Printer IP Address
+kitchen.text("Hello Benno\n")
+kitchen.barcode('4006381333931', 'EAN13', 64, 2, '', '')
+kitchen.cut()
